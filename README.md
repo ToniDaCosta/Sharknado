@@ -93,23 +93,29 @@ sns.set_style("whitegrid")
 
 Final Tip : Dont recycle code, always right down in order what you want to apply, remember you will need to make the coding work from begining to end every time.
 
+# Once you have finished remember to compartiment the proccess, you will need to separate scrubbing from ploting.
+
+- use the following command to save: `data.to_csv("data/Sharknado2.csv", index=False)`
+
+- "index=False" ( will create a new file without setting a new index)
 
 # Cheet samples for plots and charts : 
 
--------------------------------Atacks by Gender-----------------------------
+---------------Attacks by Gender--------------
 
 `filtered_data = data[data['sex_'].isin(['F', 'M', 'undefined'])]`
 
 
-unique_values = filtered_data['sex_'].unique()
+`unique_values = filtered_data['sex_'].unique()`
 
 
-palette = {'M': 'blue', 'F': 'pink', 'undefined': 'gray'}
+`palette = {'M': 'blue', 'F': 'pink', 'undefined': 'gray'}`
 
 
-ax = sns.barplot(x='sex_', y='count', data=filtered_data.groupby('sex_').size().reset_index(name='count'), palette=palette, hue='sex_', dodge=True)
+`ax = sns.barplot(x='sex_', y='count
+data=filtered_data.groupby('sex_').size()reset_index(name='count'), palette=palette, hue='sex_', dodge=True)`
 
-ax.set_title('Number of Attacks by Gender', fontsize=25 )
+`ax.set_title('Number of Attacks by Gender', fontsize=25 )
 ax.set_xlabel('Gender', fontsize=20)
-ax.set_ylabel('Count', fontsize=20);
+ax.set_ylabel('Count', fontsize=20);`
 
